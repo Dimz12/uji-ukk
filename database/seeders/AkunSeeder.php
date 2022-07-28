@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class AkunSedeer extends Seeder
+class AkunSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -21,7 +21,7 @@ class AkunSedeer extends Seeder
             'name'=>'ini adalah admin',
             'email' => 'admin@gmail.com',
             'level' => 'admin',
-            'password' => bcrypt('admin123'),
+            'password' => bcrypt('087880'),
         ],
 
         [
