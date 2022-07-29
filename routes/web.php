@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EditorController;
+use App\Http\Controllers\PerjalananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// perjalanan
+Route::get('perjalanan',[PerjalananController::class,'index']);
 
 Route::get('login',[AuthController::class,'index'])->name('login');
 Route::post('proses_login',[AuthController::class,'proses_login'])->name('proses_login');
