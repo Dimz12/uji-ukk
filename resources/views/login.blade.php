@@ -24,6 +24,7 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    {{-- test --}}
                                     {{-- Error Alert --}}
                                     @if(session('error'))
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
