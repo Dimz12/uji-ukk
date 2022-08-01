@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EditorController;
+use App\Http\Controllers\PerjalananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,9 @@ use App\Http\Controllers\EditorController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::resource('/perjalanan', PerjalananController::class);
 
 
 Route::get('login',[AuthController::class,'index'])->name('login');
