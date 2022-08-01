@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Models\Perjalanan;
+=======
+>>>>>>> 20041fe9a6e2be21ab0a289f91e6722800865227
 use Illuminate\Http\Request;
 
 class PerjalananController extends Controller
 {
+<<<<<<< HEAD
     /**
      * Display a listing of the resource.
      *
@@ -109,5 +113,9 @@ class PerjalananController extends Controller
         $perjalanan->delete();
         return back()->with('destroy','Data Berhasil di Destroy');
         
+=======
+    public function index(){
+        return view('perjalanan.show');
+>>>>>>> 20041fe9a6e2be21ab0a289f91e6722800865227
     }
 }

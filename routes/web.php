@@ -24,6 +24,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// perjalanan
+Route::get('perjalanan',[PerjalananController::class,'index']);
 
 Route::resource('/perjalanan', PerjalananController::class);
 

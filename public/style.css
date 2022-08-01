@@ -29,6 +29,20 @@
 }
 .container ul li {
     display: inline-block;
-    
-    
+
 }
+
+/* Halaman dashboard */
+
+.perjalanan{
+  margin: 200px 50px 50px 600px;
+  font-family:sans-serif ;
+}
+
+.perjalanan button{
+    margin-left: 800px;
+}
+.perjalanan h1{
+  padding-bottom: 20px;
+}
+ 
