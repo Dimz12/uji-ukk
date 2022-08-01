@@ -27,6 +27,9 @@ Route::get('/', function () {
 // perjalanan
 Route::get('perjalanan',[PerjalananController::class,'index']);
 
+Route::resource('/perjalanan', PerjalananController::class);
+
+
 Route::get('login',[AuthController::class,'index'])->name('login');
 Route::post('proses_login',[AuthController::class,'proses_login'])->name('proses_login');
 
