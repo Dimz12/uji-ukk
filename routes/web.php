@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EditorController;
-use App\Http\Controllers\PerjalananController;
+use App\Http\Controllers\CatatanController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,12 +25,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// perjalanan
-Route::get('perjalanan',[PerjalananController::class,'index']);
-
-Route::resource('/perjalanan', PerjalananController::class);
 
 
+// Catatan Perjalanan
+
+Route::get('/catatan', [CatatanController::class, 'index']);
+
+Route::get('/create-catatan', [CatatanController::class, 'create']);
+Route::post('/save-catatan', [CatatanController::class, 'store'])->name('simpan-kelas');
+
+Route::get('/edit-catatan/{id}', [CatatanController::class, 'edit']);
+Route::put('update-catatan/{id}', [CatatanController::class, 'update'])->name('update-kelas');
+
+Route::get('/delete-catatan/{id}', [CatatanController::class, 'destroy']);
+
+// Route Login
 Route::get('login',[AuthController::class,'index'])->name('login');
 Route::post('proses_login',[AuthController::class,'proses_login'])->name('proses_login');
 

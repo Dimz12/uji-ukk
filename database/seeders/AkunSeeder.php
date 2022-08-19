@@ -21,11 +21,11 @@ class AkunSeeder extends Seeder
             'name'=>'ini adalah admin',
             'email' => 'admin@gmail.com',
             'level' => 'admin',
-<<<<<<< HEAD
+
             'password' => bcrypt('admin123'),
-=======
+
             'password' => bcrypt('admin'),
->>>>>>> 20041fe9a6e2be21ab0a289f91e6722800865227
+
         ],
 
         [

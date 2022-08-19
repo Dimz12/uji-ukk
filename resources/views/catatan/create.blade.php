@@ -4,17 +4,17 @@
 @section('isi')
 <div class="card">
     <div class="card-body">
-        <form action="{{ url('perjalanan') }}" method="post">
+        <form action="{{ url('catatan') }}" method="post">
             {{ csrf_field() }}
             <div class="row">
                 <div class="col">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Tanggal</label>
-                        <input type="date" class="form-control" name="tanggal">
+                        <input type="text" class="form-control" name="tanggal">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Waktu</label>
-                        <input type="time" class="form-label" name="waktu">
+                        <input type="text" class="form-label" name="waktu">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Lokasi</label>
