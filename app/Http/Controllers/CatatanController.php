@@ -32,6 +32,7 @@ class CatatanController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
+            'nama' => 'required',
             'tanggal' => 'required',
             'waktu' => 'required',
             'lokasi' => 'required',
@@ -39,6 +40,7 @@ class CatatanController extends Controller
         ]);
 
         catatan::create ([
+            'nama' => $request->nama,
             'tanggal' => $request->tanggal,
             'waktu' => $request->waktu,
             'lokasi' => $request->lokasi,
@@ -81,6 +83,7 @@ class CatatanController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
+            'nama' => 'required',
             'tanggal' => 'required',
             'waktu' => 'required',
             'lokasi' => 'required',

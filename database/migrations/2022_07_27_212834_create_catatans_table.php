@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('catatans', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('nik');
             $table->string('tanggal');
             $table->string('waktu');
             $table->string('lokasi');

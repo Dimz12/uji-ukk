@@ -14,6 +14,8 @@ class catatan extends Model
      * @var array
      */
     protected $fillable = [
+        'nama',
+        'nik',
         'tanggal',
         'waktu',
         'lokasi',

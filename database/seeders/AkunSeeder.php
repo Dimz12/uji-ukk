@@ -17,7 +17,7 @@ class AkunSeeder extends Seeder
     {
         $user = [
          [
-            'username' => 'admin1 ',
+            'username' => 'admin',
             'name'=>'ini adalah admin',
             'email' => 'admin@gmail.com',
             'level' => 'admin',
