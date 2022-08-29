@@ -21,7 +21,7 @@ class CatatanController extends Controller
     public function index()
     {
         //get posts
-        $posts = catatan::latest()->paginate(5);
+        $posts = catatan::latest()->get();
 
         //return collection of posts as a resource
         return new CatatanResource(true, 'List Data Posts', $posts);
@@ -37,6 +37,8 @@ class CatatanController extends Controller
     {
         //define validation rules
         $validator = Validator::make($request->all(), [
+            'nama'     => 'required',
+            'nik'     => 'required',
             'tanggal'     => 'required',
             'waktu'   => 'required',
             'lokasi'   => 'required',
@@ -51,9 +53,11 @@ class CatatanController extends Controller
      
         //create post
         $post = catatan::create([
-            'tanggal'  => $request->tanggal,
-            'waktu'    => $request->waktu,
-            'lokasi'   => $request->lokasi,
+            'nama' => $request->nama,
+            'nik' => $request->nik,
+            'tanggal' => $request->tanggal,
+            'waktu'  => $request->waktu,
+            'lokasi'  => $request->lokasi,
             'suhu_tubuh'=>$request->suhu_tubuh,
         ]);
 
@@ -78,7 +82,9 @@ class CatatanController extends Controller
     {
         //define validation rules
         $validator = Validator::make($request->all(), [
-            'tanggal'     => 'required',
+            'nama'  => 'required',
+            'nik'  => 'required',
+            'tanggal'  => 'required',
             'waktu'   => 'required',
             'lokasi'   => 'required',
             'suhu_tubuh'=> 'required',
@@ -90,7 +96,7 @@ class CatatanController extends Controller
         }
 
         //check if image is not empty
-        if ($request->hasFile('tanggal')) {
+        if ($request->hasFile('nama')) {
 
             //upload image
             // $image = $request->file('image');
@@ -101,9 +107,11 @@ class CatatanController extends Controller
 
             //update post with new image
             $post->update([
-                'tanggal'     => $request->tanggal,
-                'waktu'     => $request->waktu,
-                'lokasi'   => $request->lokasi,
+                'nama'  => $request->nama,
+                'nik'  => $request->nik,
+                'tanggal'  => $request->tanggal,
+                'waktu'  => $request->waktu,
+                'lokasi'  => $request->lokasi,
                 'suhu_tubuh' => $request->suhu_tubuh,
             ]);
 
@@ -111,6 +119,8 @@ class CatatanController extends Controller
 
             //update post without image
             $post->update([
+                'nama'  => $request->nama,
+                'nik'  => $request->nik,
                 'tanggal'     => $request->tanggal,
                 'waktu'     => $request->waktu,
                 'lokasi'   => $request->lokasi,
@@ -125,7 +135,7 @@ class CatatanController extends Controller
     public function destroy(catatan $post)
     {
         //delete image
-        Storage::delete('public/posts/'.$post->tanggal);
+        Storage::delete('public/posts/'.$post->nama);
 
         //delete post
         $post->delete();
